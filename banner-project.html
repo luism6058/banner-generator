@@ -1,47 +1,82 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="UTF-8">
     <title>JQuery Template</title>
     <script src="//code.jquery.com/jquery-1.12.0.min.js">
-    
     </script>
     <script>
-          $(function(){
-            
-          
-            
-             
-            $('button').click(function(){
-              $('#name').css("font-size","20px" , "font-family","Arial" , "color","red");
-              $('#date').css("font-size","20px" , "font-family","Times-New-Roman");
-              
-              
-               var name = $('name').val();
-            var city = $('city').val();
-            var date = $('date').val()
-              
+        $(function() {
+
+
+
+
+            $('button').click(function() {
+                var font = $('#font').val();
+                var color = $('#color').val();
+                var name = $('#name').val();
+                var city = $('#city').val();
+                var date = $('#date').val();
+                $('#bannerName').html(name);
+                $('#bannerDate').html(date);
+                $('#bannerCity').html(city);
+                $('#banner').css("border-color", color);
+                $('#banner').css("font-family", font);
+
             });
-            }); 
-     
-        
-        
-        
-        
-        
-        
-        
-        
-    
+        });
     </script>
-  </head>
-  <body>
-  Name: <input id="name">
-  </br>
- <p>Date of birth: <input type="text" id="date"></p>
- 
-  City: <input id="city">
-  </br>
-  <button>Submit</button>
-  </body>
+    <style>
+        #banner {
+            border-style: dotted solid;
+            border: 5px solid dotted;
+        }
+        
+        #name {
+            font-family: "Times New Roman";
+        }
+        
+        #date {
+            font-family: "Comicsans";
+        }
+    </style>
+</head>
+
+<body>
+    <div id="banner">
+        <h1 id="bannerName"></h1>
+        <h1 id="bannerDate"></h1>
+        <h1 id="bannerCity"></h1>
+    </div>
+    Name:
+    <input id="name">
+
+    </br>
+    Date of birth (write out month):
+    <input type="text" id="date">
+
+    </br>
+    City:
+    <input id="city">
+    </br>
+    Color:
+    <select id="color">
+        <option value="yellow">yellow</option>
+        <option value="blue">blue</option>
+        <option value="red">red</option>
+        <option value="black">black</option>
+    </select>
+    <select id="font">
+        <option value="Times New Roman">Times New Roman</option>
+        <option value="Arial">Arial</option>
+        <option value="Comicsans">Comicsans</option>
+        <option value="Helvetica">Helvetica</option>
+    </select>
+    </br>
+
+
+    <button>Submit</button>
+</body>
+
 </html>
