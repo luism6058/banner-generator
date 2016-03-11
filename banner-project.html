@@ -8,22 +8,17 @@
     </script>
     <script>
         $(function() {
-
-
-
-
             $('button').click(function() {
-                var font = $('#font').val();
+                var font = $('#font').val();//creates a variable for the id and sets the value
                 var color = $('#color').val();
                 var name = $('#name').val();
                 var city = $('#city').val();
-                var date = $('#date').val();
-                $('#bannerName').html(name);
-                $('#bannerDate').html(date);
-                $('#bannerCity').html(city);
+                var date = $('#date').val();//the same for the rest of the variables
+                $('#bannerName').html(name);//replaces the value of #bannerName with the value of name
+                $('#bannerDate').html(date);//replaces the value of #bannerDate with the value of date
+                $('#bannerCity').html(city);//replaces the value of #bannerCity with the value of city
                 $('#banner').css("border-color", color);
                 $('#banner').css("font-family", font);
-
             });
         });
     </script>
@@ -31,18 +26,21 @@
         #banner {
             border-style: dotted solid;
             border: 5px solid dotted;
+            text-align: center;
         }
         
         #name {
             font-family: "Times New Roman";
+         
         }
         
         #date {
             font-family: "Comicsans";
+         
         }
+       
     </style>
 </head>
-
 <body>
     <div id="banner">
         <h1 id="bannerName"></h1>
@@ -70,13 +68,10 @@
     <select id="font">
         <option value="Times New Roman">Times New Roman</option>
         <option value="Arial">Arial</option>
-        <option value="Comicsans">Comicsans</option>
+        <option value="Comic sans ms">Comic sans</option>
         <option value="Helvetica">Helvetica</option>
     </select>
     </br>
-
-
     <button>Submit</button>
 </body>
-
 </html>
